@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,19 +20,4 @@ Route::get('/', function () {
 
 });
 
-
-Route::get('/testing' ,function () {
-    return view("Hello");
-    });
-
-    Route::get('/parent' ,function () {
-        return view("admin.parren");
-        });
-    
-Route::resource('/about', AboutController::class);
-
-Route::get('/profile-index', [UserController::class, 'index']) ->name('iniProfile');
-
-Route::get('/lol', function () {
-    return view("admin.Nabvar");
-});
+Route::resource('admin', AdminController::class);
